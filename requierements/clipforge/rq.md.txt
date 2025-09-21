@@ -1,0 +1,24 @@
+[Boilerplate preamble]
+
+## What I Want to Build
+**ClipForge** — upload long video → auto-detect highlights → generate Shorts/Reels (9:16), captions, templates.
+
+### Features
+- Upload long video, speaker diarization (optional)
+- AI highlight detection (silence, spikes, keywords)
+- Auto-subtitles + brand templates
+- Batch export to 9:16 with safe areas
+
+### Routes
+- `/projects`, `/projects/:id` (editor), `/templates`, `/exports`
+
+### DB
+- projects, assets(video/audio), clips, templates, renders, usage
+
+### Pipeline
+- Ingest → scene detect → transcript (Whisper) → score highlights → cut → caption → export
+
+### Guardrails
+- No heavy GPU runs before payment; allow 10s local preview using FFmpeg only
+
+[Request/Final Reminder/Docs]

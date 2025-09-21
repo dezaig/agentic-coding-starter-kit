@@ -1,0 +1,20 @@
+# HelpBeam - Project Dependencies (Windows + npm)
+
+[REQUIRED]
+- FFmpeg: (only if you plan audio ingestion later) -> optional for MVP
+- PostgreSQL:
+  - Remote (Neon/Supabase) recommended: POSTGRES_URL=...sslmode=require
+  - OR local Postgres 16+
+- (Vector) pgvector extension:
+  - If Neon/Supabase: enable extension in dashboard
+  - If local: CREATE EXTENSION IF NOT EXISTS vector;
+
+[OPTIONAL]
+- Redis (job queue for crawls): REDIS_URL=redis://localhost:6379
+- Stripe CLI (webhooks dev)
+- Storage (R2/S3) for file uploads
+
+[COMMANDS]
+npm ci
+npm run db:push
+npm run dev

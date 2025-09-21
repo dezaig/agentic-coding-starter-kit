@@ -1,0 +1,21 @@
+[Boilerplate preamble]
+
+## What I Want to Build
+**MicroMarket** — launch a vertical marketplace (e.g., tutors, artisans) with listings, search, booking, payments.
+
+### Features
+- Listings CRUD, search & filters
+- Booking/requests, messaging
+- Reviews, payouts (Stripe Connect)
+- Admin moderation, fees
+
+### Routes
+- `/market`, `/listing/:id`, `/inbox`, `/dashboard` (seller)
+
+### DB
+- users, listings, categories, photos, bookings, messages, reviews, payouts, fees
+
+### Guardrails
+- Payments sandbox for trial; production requires KYC via Stripe Connect
+
+[Request/Final Reminder/Docs]

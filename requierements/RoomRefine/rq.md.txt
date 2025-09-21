@@ -1,0 +1,98 @@
+I'm working with an agentic coding boilerplate project that includes authentication, database integration, and AI capabilities. Here's what's already set up:
+
+## Current Agentic Coding Boilerplate Structure
+- Authentication: Better Auth with Google OAuth integration
+- Database: Drizzle ORM with PostgreSQL setup
+- AI Integration: Vercel AI SDK with OpenAI integration
+- UI: shadcn/ui components with Tailwind CSS
+- Current Routes:
+  - `/` - Home page with setup instructions and feature overview
+  - `/dashboard` - Protected dashboard page (requires authentication)
+  - `/chat` - AI chat interface (requires OpenAI API key)
+
+## Important Context
+This is an agentic coding boilerplate/starter template - all existing pages and components are meant to be examples and should be completely replaced to build the actual AI-powered application.
+
+### CRITICAL: You MUST Override All Boilerplate Content
+DO NOT keep any boilerplate components, text, or UI elements unless explicitly requested. This includes:
+- Remove all placeholder/demo content
+- Replace the entire navigation structure
+- Override all page content completely
+- Remove or replace all example components
+- Replace placeholder routes and pages with the actual application functionality
+
+### Required Actions:
+1. Start Fresh
+2. Complete Replacement
+3. No Hybrid Approach
+4. Clean Slate
+
+Preserve ONLY:
+- Installed libraries/dependencies
+- Authentication system
+- Database setup (can modify schema)
+- Core config files
+- Build/dev scripts
+
+## Tech Stack
+- Next.js 15 (App Router), TypeScript, Tailwind, shadcn/ui, Lucide
+- Better Auth, Drizzle + PostgreSQL
+- Vercel AI SDK (OpenAI)
+
+## AI Model Configuration
+// ✓ Correct
+const model = process.env.OPENAI_MODEL || "gpt-5-mini";
+model: openai(model)
+
+## What I Want to Build
+**RoomRefine** — je charge **une photo d’intérieur** + **un meuble (photo/URL) ou un style** (“scandi”, “Japandi”, “loft”). L’app **relooke la pièce** en intégrant le meuble/finition dans la scène et génère :
+- **Avant/Après** (images HD)
+- **Courte vidéo** (3–5s) pan/zoom du rendu.
+
+### Core Features (MVP)
+- Upload room photo; détection des plans (sol/murs) & masque mobilier existant.
+- Placement du nouveau meuble (scale/perspective), ombres et harmonisation.
+- Style transfer/scène re-render (texture/teinte/éclairage cohérents).
+- Export images + micro-vidéo 9:16/16:9.
+- **Aucune génération payante avant paiement**: preview gratuite = mock overlay (FFmpeg).
+
+### Routes
+- `/` Landing (démos, galeries)
+- `/projects`, `/projects/new`
+- `/projects/:id/editor` (masking assist, position/scale meuble)
+- `/projects/:id/preview` (free mock)
+- `/projects/:id/checkout`
+- `/projects/:id/generate`
+- `/projects/:id/renders`
+
+### DB (Drizzle)
+- `users`
+- `projects(id, user_id, title, style, status, created_at, updated_at)`
+- `assets(id, project_id, type('room'|'furniture'|'mask'|'render'|'video'), url, meta_json)`
+- `jobs(id, project_id, type, status, error, payload_json, result_json, created_at, updated_at)`
+- `renders(id, project_id, format('image'|'9x16'|'16x9'), url, size_bytes, created_at)`
+- `billing_events(...)`
+
+### Pipeline après paiement
+1. **SEGMENT_SCENE**: room parsing (floor/walls/object masks).
+2. **PLACE_FURNITURE**: scale + perspective + shadow.
+3. **RESTYLE** (optionnel): appliquer style global (scandi/loft).
+4. **RENDER_EXPORT**: images HD + micro-vidéo (Ken Burns).
+5. **DELIVER**.
+
+### Zero-Cost Preview
+- Overlay meuble semi-transparent + ombre simple, sans appel AI payant.
+- Watermark + limitations.
+
+### Guardrails
+- Limites d’upload (dimensions/poids), filigrane preview, suppression sur demande.
+- Pas d’API payante avant paiement.
+
+## Request
+Replace the entire boilerplate with RoomRefine.
+
+## Final Reminder
+No boilerplate remnants.
+
+## Post-Implementation Documentation
+Create `/docs/features/*` for: segmentation, placement, restyle, billing, privacy.

@@ -1,0 +1,22 @@
+# FitFlick - Project Dependencies (Windows + npm)
+
+[REQUIRED]
+- FFmpeg:
+  winget install --id Gyan.FFmpeg -e
+  ffmpeg -version
+- PostgreSQL:
+  - Remote (Neon/Supabase): POSTGRES_URL=...sslmode=require
+  - OR local Postgres 16+
+- Storage (R2/S3) for uploads/renders
+
+[OPTIONAL]
+- Redis (jobs): REDIS_URL=redis://localhost:6379
+- Stripe CLI (webhooks)
+- Segmentation/AI providers (choose one path):
+  * Self-host: Mediapipe/ControlNet/VTON (later)
+  * API: generic segmentation/try-on API creds
+
+[COMMANDS]
+npm ci
+npm run db:push
+npm run dev

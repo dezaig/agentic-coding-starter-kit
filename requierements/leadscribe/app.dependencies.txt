@@ -1,0 +1,13 @@
+[REQUIRED]
+- PostgreSQL
+
+[OPTIONAL]
+- Redis (send queue)
+- Gmail/Outlook API creds
+- Stripe CLI
+- Vector search (for personalization snippets)
+
+[COMMANDS]
+npm ci
+npm run db:push
+npm run dev

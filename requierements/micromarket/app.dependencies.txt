@@ -1,0 +1,12 @@
+[REQUIRED]
+- PostgreSQL
+
+[OPTIONAL]
+- Storage (R2/S3) for photos
+- Stripe Connect
+- Redis (background emails/notifications)
+
+[COMMANDS]
+npm ci
+npm run db:push
+npm run dev

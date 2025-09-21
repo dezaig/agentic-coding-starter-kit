@@ -1,0 +1,26 @@
+[Same boilerplate preamble as HelpBeam]
+
+## What I Want to Build
+**PostPilot** — plan, generate, and schedule social posts across X/Instagram/LinkedIn/TikTok.
+- Content calendar with AI repurposing (one idea → multi-platform variants).
+- Asset library, brand presets, first-comment and hashtag sets.
+- Scheduling + queue; link tracking (UTM).
+
+### Features
+- Calendars, queues, approvals (roles)
+- AI rewrite per network constraints
+- Media upload/cropping, caption templates
+- Integrations: X/IG/LinkedIn/TikTok posting APIs (use webhooks where available)
+- Billing: seats + scheduled post quotas
+
+### Routes
+- `/calendar`, `/library`, `/captions`, `/integrations`, `/analytics`
+
+### DB
+- posts, platforms, schedules, media, projects, brand_presets, analytics_events
+
+### Guardrails
+- No API posting before account connection
+- Free tier: draft-only (no publish)
+
+[Request / Final Reminder / Docs same as HelpBeam]

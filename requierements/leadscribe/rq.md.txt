@@ -1,0 +1,22 @@
+[Boilerplate preamble]
+
+## What I Want to Build
+**LeadScribe** — paste prospect info (or LinkedIn URL) → AI drafts personalized outreach sequences; track opens/replies.
+
+### Features
+- Prospect enrichment (paste data; optional scraping later)
+- Sequence templates, A/B tests
+- Send via Gmail/Outlook API (user auth)
+- Inbox sync (track replies), analytics
+
+### Routes
+- `/prospects`, `/sequences`, `/inbox`, `/analytics`
+
+### DB
+- prospects, sequences, steps, campaigns, sends, events
+
+### Guardrails
+- No sending without domain/auth setup; daily send caps
+- Free tier: drafts only, no send
+
+[Request/Final Reminder/Docs]

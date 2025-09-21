@@ -1,0 +1,13 @@
+[REQUIRED]
+- PostgreSQL
+
+[OPTIONAL]
+- Redis (reminder jobs)
+- SMS/WhatsApp provider (Twilio/WhatsApp Cloud)
+- Stripe CLI
+- Storage (logos)
+
+[COMMANDS]
+npm ci
+npm run db:push
+npm run dev

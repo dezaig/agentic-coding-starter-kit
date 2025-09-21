@@ -1,0 +1,92 @@
+I'm working with an agentic coding boilerplate project that includes authentication, database integration, and AI capabilities. Here's what's already set up:
+
+## Current Agentic Coding Boilerplate Structure
+- Authentication: Better Auth with Google OAuth integration
+- Database: Drizzle ORM with PostgreSQL setup
+- AI Integration: Vercel AI SDK with OpenAI integration
+- UI: shadcn/ui components with Tailwind CSS
+- Current Routes:
+  - `/` - Home page with setup instructions and feature overview
+  - `/dashboard` - Protected dashboard page (requires authentication)
+  - `/chat` - AI chat interface (requires OpenAI API key)
+
+## Important Context
+This is an agentic coding boilerplate/starter template - all existing pages and components are meant to be examples and should be completely replaced to build the actual AI-powered application.
+
+### CRITICAL: You MUST Override All Boilerplate Content
+DO NOT keep any boilerplate components, text, or UI elements unless explicitly requested. This includes:
+- Remove all placeholder/demo content
+- Replace the entire navigation structure
+- Override all page content completely
+- Remove or replace all example components
+- Replace placeholder routes and pages with the actual application functionality
+
+### Required Actions:
+1. Start Fresh
+2. Complete Replacement
+3. No Hybrid Approach
+4. Clean Slate
+
+Preserve ONLY:
+- Installed libraries/dependencies
+- Authentication system
+- Database setup (can modify schema)
+- Core config files
+- Build/dev scripts
+
+## Tech Stack
+- Next.js 15 (App Router), TypeScript, Tailwind, shadcn/ui, Lucide
+- Better Auth, Drizzle + PostgreSQL
+- Vercel AI SDK (OpenAI)
+
+## AI Model Configuration
+// ✓ Correct
+const model = process.env.OPENAI_MODEL || "gpt-5-mini";
+model: openai(model)
+// ✗ Incorrect
+// model: openai("gpt-5-mini")
+
+## What I Want to Build
+**HelpBeam** — a drop-in AI customer-support widget for websites.
+- Site owner installs a `<script>` to embed the widget.
+- Knowledge sources: URLs, uploaded PDFs, manual FAQs.
+- Chatbot answers with retrieval-augmented generation (RAG).
+- Escalation to email/inbox for hard questions.
+- Multi-tenant: each workspace has its own data.
+- **No paid inference before checkout**: free plan = local demo with small docs; full RAG only after payment.
+
+### Core Features
+- Workspaces, members, roles
+- Content ingestion (crawler + file upload)
+- Embeddings + vector search (supabase pgvector or neon + extension)
+- AI answer synth + sources
+- Widget customization (brand color, welcome text)
+- Billing: one-shot (usage credits) + subscriptions (monthly/yearly)
+
+### New Routes
+- `/` Landing
+- `/pricing`
+- `/auth/*`
+- `/w/*` workspace dashboard (docs, sources, chat logs)
+- `/api/ingest/*`, `/api/widget/*` (public embed)
+- `/account` billing
+
+### DB (Drizzle idea)
+- users, workspaces, memberships
+- sources(id, type:url|file|faq, meta)
+- chunks(id, source_id, text, embedding)
+- conversations, messages
+- plans/subscriptions, usage
+
+### Guardrails
+- No external embedding/chat calls until plan active or credits > 0
+- Size/time caps for free
+
+## Request
+Replace the entire boilerplate with HelpBeam.
+
+## Final Reminder: COMPLETE REPLACEMENT REQUIRED
+No boilerplate remnants.
+
+## Post-Implementation Documentation
+Create `/docs/features/*` for: ingestion, vector search, widget, billing, RAG.

@@ -1,0 +1,13 @@
+[REQUIRED]
+- PostgreSQL
+- (Vector) pgvector
+
+[OPTIONAL]
+- Redis (async ingestion)
+- Storage R2/S3
+- Stripe CLI
+
+[COMMANDS]
+npm ci
+npm run db:push
+npm run dev

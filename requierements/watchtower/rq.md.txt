@@ -1,0 +1,21 @@
+[Boilerplate preamble]
+
+## What I Want to Build
+**WatchTower** — monitor URLs (text/price/spec changes) → alerts + diffs; AI summarizes what's changed.
+
+### Features
+- URL watchers with frequency
+- DOM/Text diff
+- AI summary of changes
+- Alerts: email/Slack/Discord/Zapier
+
+### Routes
+- `/watchers`, `/diff/:id`, `/alerts`
+
+### DB
+- watchers, snapshots, diffs, alerts, integrations
+
+### Guardrails
+- Rate limits per user; free tier small quotas
+
+[Request/Final Reminder/Docs]
